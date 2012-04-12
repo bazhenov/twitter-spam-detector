@@ -9,7 +9,7 @@ def main():
 		line = sys.stdin.readline()
 		if not line: break
 		line = line.strip()
-		if (len(line1) > 0):
+		if (len(line) > 0):
 			attr = json.loads(line)
 			marker = "SPAM" if classify(model, attr) == "B" else "OK"
 			text = attr['text'].encode('utf-8')
