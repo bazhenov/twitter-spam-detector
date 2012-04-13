@@ -1,0 +1,3 @@
+#!/bin/sh
+
+./stream-tweets | tee -a stream.back | ./classify.py model.m | tee spam.progress | awk '{if($1=="OK"&&$2!="vldcru") print $3; fflush()}' | php -f retweet.php
